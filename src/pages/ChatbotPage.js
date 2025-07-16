@@ -235,7 +235,7 @@ const ChatbotPage = () => {
                             className="mini-course-btn"
                             onClick={() => handleViewDetails(course)}
                           >
-                            Xem chi tiết
+                            Chi tiết
                           </button>
                         </div>
                       </div>

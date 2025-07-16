@@ -126,7 +126,7 @@ function ProductModal({ isOpen, course, onClose }) {
 
           <div className="course-price">
             <h3 className="price">
-              {course.price.toLocaleString("vi-VN")} VND
+              {course.price.toLocaleString("vi-VN")} VNĐ
             </h3>
           </div>
 
