@@ -7,6 +7,7 @@ import { useUserBehavior } from "../contexts/UserBehaviorContext";
 import SuggestionsButton from "../components/SuggestionsButton/SuggestionsButton";
 import SuggestionsModal from "../components/SuggestionsModal/SuggestionsModal";
 import ProductModal from "../components/ProductModal/ProductModal";
+import { Loader } from "lucide-react";
 
 import "../styles/components/ProductCard.css";
 import "../styles/pages/HomePage.css";
@@ -107,7 +108,10 @@ function HomePage() {
       {/* Results section */}
       <div className="courses-container">
         {loading ? (
-          <p>Đang tải khóa học...</p>
+          <div className="loading-state">
+            <Loader className="loading-spinner" />
+            <p className="loading-text">Đang tải khóa học...</p>
+          </div>
         ) : error ? (
           <p>{error}</p>
         ) : filteredCourses.length > 0 ? (
