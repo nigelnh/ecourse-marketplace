@@ -142,8 +142,19 @@
   font-size: var(--font-size-xs);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .product-image {
+    min-width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    min-height: 180px;
+  }
+
   .product-content {
     padding: var(--spacing-sm);
   }
@@ -156,5 +167,29 @@
 
   .btn-sm {
     width: 100%;
+  }
+
+  .favorite-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-content {
+    padding: var(--spacing-xs);
+  }
+
+  .product-title {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+
+  .product-author {
+    font-size: var(--font-size-xs);
+  }
+
+  .product-image {
+    min-height: 160px;
   }
 }

@@ -26,14 +26,17 @@
 
 @media (max-width: 768px) {
   .courses-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--spacing-md);
+    margin: 0px 20px 0px 20px;
   }
 }
 
 @media (max-width: 480px) {
   .courses-container {
     grid-template-columns: 1fr;
+    margin: 0px 16px 0px 16px;
+    gap: var(--spacing-sm);
   }
 }
 
