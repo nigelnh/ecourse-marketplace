@@ -6,6 +6,7 @@ import ProductCard from "../components/ProductCard/ProductCard";
 import ProductModal from "../components/ProductModal/ProductModal";
 import SuggestionsButton from "../components/SuggestionsButton/SuggestionsButton";
 import SuggestionsModal from "../components/SuggestionsModal/SuggestionsModal";
+import { Loader } from "lucide-react";
 import "../styles/pages/HistoryPage.css";
 
 function HistoryPage() {
@@ -64,7 +65,10 @@ function HistoryPage() {
       <h1>Lịch sử xem ({viewedCourses.length})</h1>
 
       {loading ? (
-        <div className="loading-state">Đang tải lịch sử xem...</div>
+        <div className="loading-state">
+          <Loader className="loading-spinner" />
+          <p className="loading-text">Đang tải lịch sử xem...</p>
+        </div>
       ) : error ? (
         <div className="error-state">{error}</div>
       ) : historyCourses.length > 0 ? (

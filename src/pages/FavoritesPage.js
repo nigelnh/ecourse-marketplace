@@ -7,6 +7,8 @@ import ProductCard from "../components/ProductCard/ProductCard";
 import ProductModal from "../components/ProductModal/ProductModal";
 import SuggestionsButton from "../components/SuggestionsButton/SuggestionsButton";
 import SuggestionsModal from "../components/SuggestionsModal/SuggestionsModal";
+import { Loader } from "lucide-react";
+
 import "../styles/pages/FavoritesPage.css";
 
 function FavoritesPage() {
@@ -66,7 +68,10 @@ function FavoritesPage() {
       <h1>Khóa học yêu thích ({favorites.length})</h1>
 
       {loading ? (
-        <p>Đang tải khóa học yêu thích...</p>
+        <div className="loading-state">
+          <Loader className="loading-spinner" />
+          <p className="loading-text">Đang tải khóa học yêu thích...</p>
+        </div>
       ) : error ? (
         <p style={{ color: "red" }}>{error}</p>
       ) : favoriteCourses.length > 0 ? (
