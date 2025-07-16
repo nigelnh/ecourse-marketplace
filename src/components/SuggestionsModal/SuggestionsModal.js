@@ -37,7 +37,8 @@ const SuggestionsModal = ({ isOpen, onClose, onViewDetails }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [favorites, viewedCourses]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
