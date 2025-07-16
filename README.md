@@ -24,7 +24,7 @@ React-based marketplace cho các khóa học trực tuyến với tính năng g�
 ### Cài đặt dependencies
 
 ```bash
-cd ebook-marketplace
+cd ecourse-marketplace
 npm install
 ```
 
