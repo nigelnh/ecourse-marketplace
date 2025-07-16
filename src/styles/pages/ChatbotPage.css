@@ -15,7 +15,7 @@
   gap: var(--spacing-lg);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 120;
 }
 
 .back-button {
