@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { X, Loader } from "lucide-react";
 import ProductCard from "../ProductCard/ProductCard";
 import { generateSuggestions } from "../../utils/suggestionsService";
@@ -13,13 +13,7 @@ const SuggestionsModal = ({ isOpen, onClose, onViewDetails }) => {
   const { viewedCourses } = useUserBehavior();
   const { favorites } = useFavorites();
 
-  useEffect(() => {
-    if (isOpen) {
-      fetchSuggestions();
-    }
-  }, [isOpen, fetchSuggestions]);
-
-  const fetchSuggestions = async () => {
+  const fetchSuggestions = useCallback(async () => {
     setIsLoading(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -43,7 +37,13 @@ const SuggestionsModal = ({ isOpen, onClose, onViewDetails }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      fetchSuggestions();
+    }
+  }, [isOpen, fetchSuggestions]);
 
   if (!isOpen) return null;
 

@@ -6,7 +6,6 @@ import "../../styles/components/ProductCard.css";
 const ProductCard = ({ course, onViewDetails }) => {
   const { toggleFavorite, isFavorite } = useFavorites();
 
-  // Handle favorite click
   const handleFavoriteClick = (e) => {
     e.stopPropagation();
     toggleFavorite(course.id);

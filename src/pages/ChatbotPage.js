@@ -18,7 +18,6 @@ const ChatbotPage = () => {
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [courses, setCourses] = useState([]);
-  const [suggestedCourses, setSuggestedCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { addViewedCourse } = useUserBehavior();
@@ -172,7 +171,6 @@ const ChatbotPage = () => {
       };
 
       setMessages((prev) => [...prev, botMessage]);
-      setSuggestedCourses(aiResponse.courses);
       setIsTyping(false);
     }, 1500);
   };
