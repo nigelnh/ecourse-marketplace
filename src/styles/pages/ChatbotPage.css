@@ -65,6 +65,7 @@
   width: 100%;
   padding: 0 var(--spacing-lg);
   overflow: hidden;
+  height: calc(100vh - 80px);
 }
 
 .messages-container {
@@ -76,6 +77,8 @@
   gap: var(--spacing-lg);
   scroll-behavior: smooth;
   padding-bottom: 120px;
+  padding-top: 80px;
+  scroll-padding-top: 80px;
 }
 
 /* Messages */
