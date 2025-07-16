@@ -418,8 +418,4 @@
     right: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
   }
-
-  .chat-input {
-    font-size: var(--font-size-sm);
-  }
 }

@@ -63,10 +63,10 @@
   background: var(--color-background);
   font-size: var(--font-size-base);
   font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-text);
   cursor: pointer;
   transition: all 0.2s ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath d='M2 0L0 2h4zm0 5L0 3h4z' fill='%23666'/%3E%3C/svg%3E");
   background-position: right 12px center;
