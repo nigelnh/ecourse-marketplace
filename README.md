@@ -133,9 +133,9 @@ kill -9 [PID]
 
 ## 📝 Demo
 
-**Demo Link**: [Deployed on Vercel/Netlify]
+**Demo Link**: https://ecourse-marketplace.netlify.app/
 
-**Github Repo**: [Repository URL]
+**Github Repo**: https://github.com/nigelnh/ecourse-marketplace
 
 ## Tech Stack
 
