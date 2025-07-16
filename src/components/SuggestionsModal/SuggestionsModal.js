@@ -17,7 +17,7 @@ const SuggestionsModal = ({ isOpen, onClose, onViewDetails }) => {
     if (isOpen) {
       fetchSuggestions();
     }
-  }, [isOpen]);
+  }, [isOpen, fetchSuggestions]);
 
   const fetchSuggestions = async () => {
     setIsLoading(true);
