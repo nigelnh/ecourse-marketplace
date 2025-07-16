@@ -357,7 +357,7 @@
 
 @media (max-width: 480px) {
   .chatbot-header {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md) 0;
     gap: var(--spacing-md);
   }
 

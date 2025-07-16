@@ -146,6 +146,7 @@
   .product-card {
     flex-direction: column;
     min-height: auto;
+    padding: 10px;
   }
 
   .product-image {
@@ -153,10 +154,18 @@
     max-width: 100%;
     aspect-ratio: 16/9;
     min-height: 180px;
+    border-radius: 5px;
   }
 
   .product-content {
     padding: var(--spacing-sm);
+  }
+  
+  .product-price {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
   }
 
   .product-footer {
