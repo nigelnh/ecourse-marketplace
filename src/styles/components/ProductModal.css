@@ -37,6 +37,15 @@
   position: relative;
 }
 
+.modal-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 @keyframes slideIn {
   to {
     transform: scale(1) translateY(0);
