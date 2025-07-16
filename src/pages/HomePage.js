@@ -23,7 +23,6 @@ function HomePage() {
   const { addViewedCourse } = useUserBehavior();
   const [isSuggestionsModalOpen, setIsSuggestionsModalOpen] = useState(false);
 
-  // Load courses from API
   useEffect(() => {
     const loadCourses = async () => {
       try {

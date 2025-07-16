@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useFavorites } from "../contexts/FavoritesContext";
 import { useUserBehavior } from "../contexts/UserBehaviorContext";
-// import { courses } from "../utils/mockData";
 import { getCourses } from "../services/apiService";
 import ProductCard from "../components/ProductCard/ProductCard";
 import ProductModal from "../components/ProductModal/ProductModal";

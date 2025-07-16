@@ -1,11 +1,9 @@
-/* FavoritesPage Minimalist Styling */
 .favorites-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-lg);
 }
 
-/* Page Header */
 .favorites-page h1 {
   font-size: var(--font-size-2xl);
   font-weight: 600;
@@ -15,7 +13,6 @@
   letter-spacing: -0.025em;
 }
 
-/* Grid Layout for Courses */
 .favorites-page .courses-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -23,7 +20,6 @@
   margin-bottom: var(--spacing-2xl);
 }
 
-/* Empty State Styling */
 .empty-state {
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-lg);
@@ -60,7 +56,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .favorites-page {
     padding: var(--spacing-lg) var(--spacing-md);

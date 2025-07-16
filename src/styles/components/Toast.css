@@ -1,4 +1,4 @@
-/* Toast Container - Fixed position at top-right */
+/* Toast Container */
 .toast-container {
   position: fixed;
   top: var(--spacing-xl);
@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: var(--spacing-sm);
   max-width: 400px;
-  pointer-events: none; /* Allow clicks to pass through container */
+  pointer-events: none;
 }
 
 /* Individual Toast */
@@ -101,13 +101,11 @@
   color: var(--color-primary);
 }
 
-/* Hover effects */
 .toast:hover {
   transform: translateY(-2px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .toast-container {
     top: var(--spacing-lg);

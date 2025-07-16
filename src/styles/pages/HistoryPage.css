@@ -19,7 +19,6 @@
   margin-bottom: var(--spacing-2xl);
 }
 
-/* Empty State */
 .empty-state {
   text-align: center;
   padding: var(--spacing-3xl) var(--spacing-lg);
@@ -49,7 +48,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .history-page {
     padding: var(--spacing-lg) var(--spacing-md);

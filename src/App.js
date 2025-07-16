@@ -1,10 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { courses } from "./utils/mockData";
-// import ProductCard from "./components/ProductCard/ProductCard";
-// import SearchBar from "./components/SearchBar/SearchBar";
-// import PriceFilter from "./components/PriceFilter/PriceFilter";
-// import ProductModal from "./components/ProductModal/ProductModal";
-// import "./components/ProductCard/ProductCard.css";
 import {
   BrowserRouter as Router,
   Routes,

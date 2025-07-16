@@ -17,7 +17,6 @@ function HistoryPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Load courses from API
   useEffect(() => {
     const loadCourses = async () => {
       try {

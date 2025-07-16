@@ -293,7 +293,6 @@ const ChatbotPage = () => {
         </div>
       </div>
 
-      {/* Product Modal */}
       {isModalOpen && (
         <ProductModal
           isOpen={isModalOpen}
