@@ -37,7 +37,7 @@ const SuggestionsModal = ({ isOpen, onClose, onViewDetails }) => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [favorites, viewedCourses]);
 
   useEffect(() => {
     if (isOpen) {
