@@ -332,10 +332,6 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .chatbot-header {
-    padding: var(--spacing-md) var(--spacing-lg);
-  }
-
   .chatbot-title h1 {
     font-size: var(--font-size-lg);
   }
@@ -345,7 +341,7 @@
   }
 
   .messages-container {
-    margin-top: 70px; /* Adjust for tablet header height */
+    margin-top: 70px;
   }
 
   .message {
@@ -383,7 +379,7 @@
 
   .messages-container {
     padding: var(--spacing-lg) 0;
-    margin-top: 60px; /* Smaller margin for mobile header */
+    margin-top: 60px;
   }
 
   .message {

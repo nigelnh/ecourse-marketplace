@@ -310,6 +310,11 @@
     padding: var(--spacing-sm);
   }
 
+  .modal-content {
+    width: 90%;
+    height: 100vh;
+  }
+
   .modal-header {
     padding: var(--spacing-md);
   }
