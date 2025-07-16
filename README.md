@@ -1,30 +1,25 @@
-# 📚 Sàn Giáo Dục Thương Mại Điện Tử với AI
+# Sàn Giáo Dục Thương Mại Điện Tử với AI
 
 React-based marketplace cho các khóa học trực tuyến với tính năng gợi ý thông minh từ AI.
 
-## 🚀 Tính năng chính
-
-### ✅ Yêu cầu cơ bản
+## Tính năng chính
 
 - **Hiển thị danh sách sản phẩm**: Hiển thị khóa học với thông tin đầy đủ
 - **Tìm kiếm và lọc**: Tìm theo tên, lọc theo giá
 - **Gợi ý thông minh (AI)**: Gọi API `/api/suggestions?userId=xxx`
 - **Modal chi tiết**: Xem thông tin chi tiết khóa học
 - **Yêu thích**: Đánh dấu và quản lý khóa học yêu thích
-
-### 🌟 Điểm cộng
-
 - **Lịch sử xem**: Track và hiển thị khóa học đã xem
 - **Loading states**: Skeleton loading khi gọi API
 - **Error handling**: Xử lý lỗi khi API fail
 - **Responsive design**: Hoạt động tốt trên mọi thiết bị
 
-## 🛠️ Cài đặt và chạy
+## Cài đặt
 
 ### Prerequisites
 
 - Node.js (>=14.0.0)
-- npm hoặc yarn
+- npm or yarn
 
 ### Cài đặt dependencies
 
@@ -59,7 +54,7 @@ npm run dev
   - GET /courses - Lấy danh sách khóa học
   - GET /suggestions?userId=xxx - Lấy gợi ý cho user
 
-## 📊 Dữ liệu
+## Dữ liệu
 
 Project sử dụng **JSON Server** làm fake API với file `db.json`:
 
@@ -70,7 +65,7 @@ Project sử dụng **JSON Server** làm fake API với file `db.json`:
 }
 ```
 
-## 🎯 Kiến trúc
+## Kiến trúc
 
 ### Components chính
 
@@ -91,7 +86,7 @@ Project sử dụng **JSON Server** làm fake API với file `db.json`:
 - **apiService.js**: API calls với Axios
 - **suggestionsService.js**: Logic gợi ý thông minh
 
-## 🤖 AI Suggestions
+## AI Suggestions
 
 Hệ thống gợi ý hoạt động theo 2 lớp:
 
@@ -101,7 +96,7 @@ Hệ thống gợi ý hoạt động theo 2 lớp:
    - Danh sách yêu thích
    - Tương tự về giá cả, tác giả, level
 
-## 🎨 UI/UX Features
+## UI/UX Features
 
 - **Modern Design**: Giao diện hiện đại, thân thiện
 - **Responsive**: Mobile-first approach
@@ -109,7 +104,7 @@ Hệ thống gợi ý hoạt động theo 2 lớp:
 - **Loading States**: Skeleton loading cho better UX
 - **Error Handling**: User-friendly error messages
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### JSON Server không khởi động
 
@@ -142,15 +137,13 @@ kill -9 [PID]
 
 **Github Repo**: [Repository URL]
 
-## 🏗️ Technology Stack
+## Tech Stack
 
-- **Frontend**: React 18, React Router DOM
-- **Styling**: CSS3, Responsive Design
+- **Frontend**: React 18
+- **Styling**: CSS, Responsive Design
 - **State Management**: Context API + useReducer
 - **HTTP Client**: Axios
 - **Mock API**: JSON Server
 - **Icons**: Lucide React
 
 ---
-
-_Phát triển bởi [Tên của bạn] - Đáp ứng yêu cầu đề bài Front-end Intern Assignment_
