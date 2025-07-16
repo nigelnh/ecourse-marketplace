@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState, useEffect } from "react";
+// import { courses } from "./utils/mockData";
+// import ProductCard from "./components/ProductCard/ProductCard";
+// import SearchBar from "./components/SearchBar/SearchBar";
+// import PriceFilter from "./components/PriceFilter/PriceFilter";
+// import ProductModal from "./components/ProductModal/ProductModal";
+// import "./components/ProductCard/ProductCard.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { ToastProvider } from "./contexts/ToastContext";
+import { FavoritesProvider } from "./contexts/FavoritesContext";
+import { SuggestionsProvider } from "./contexts/SuggestionsContext";
+import { UserBehaviorProvider } from "./contexts/UserBehaviorContext";
+import HomePage from "./pages/HomePage";
+import FavoritesPage from "./pages/FavoritesPage";
+import HistoryPage from "./pages/HistoryPage";
+import ChatbotPage from "./pages/ChatbotPage";
+import Navigation from "./components/Navigation/Navigation";
+import ToastContainer from "./components/Toast/Toast";
+import ChatbotButton from "./components/ChatbotButton/ChatbotButton";
+import "./styles/globals.css";
+
+const AppContent = () => {
+  const location = useLocation();
+  const showChatbotButton = location.pathname !== "/chatbot";
+
+  return (
+    <div className="App">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/chatbot" element={<ChatbotPage />} />
+      </Routes>
+      <ToastContainer />
+      {showChatbotButton && <ChatbotButton />}
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ToastProvider>
+      <UserBehaviorProvider>
+        <FavoritesProvider>
+          <SuggestionsProvider>
+            <Router>
+              <AppContent />
+            </Router>
+          </SuggestionsProvider>
+        </FavoritesProvider>
+      </UserBehaviorProvider>
+    </ToastProvider>
   );
 }
 

@@ -1,0 +1,102 @@
+.chatbot-button {
+  position: fixed;
+  bottom: 120px;
+  right: var(--spacing-xl);
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1500; /* Above SuggestionsButton (1000) but below modals */
+  overflow: hidden;
+}
+
+.chatbot-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.chatbot-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.chatbot-button:hover::before {
+  opacity: 1;
+}
+
+.chatbot-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.chatbot-button svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tooltip */
+.chatbot-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.chatbot-button:hover .chatbot-tooltip {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chatbot-button {
+    bottom: 120px;
+    right: var(--spacing-lg);
+    width: 56px;
+    height: 56px;
+  }
+
+  .chatbot-tooltip {
+    right: 65px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-button {
+    bottom: 100px;
+    right: var(--spacing-md);
+    width: 52px;
+    height: 52px;
+  }
+
+  .chatbot-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}

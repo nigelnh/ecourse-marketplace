@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# 📚 Sàn Giáo Dục Thương Mại Điện Tử với AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-based marketplace cho các khóa học trực tuyến với tính năng gợi ý thông minh từ AI.
 
-## Available Scripts
+## 🚀 Tính năng chính
 
-In the project directory, you can run:
+### ✅ Yêu cầu cơ bản
 
-### `npm start`
+- **Hiển thị danh sách sản phẩm**: Hiển thị khóa học với thông tin đầy đủ
+- **Tìm kiếm và lọc**: Tìm theo tên, lọc theo giá
+- **Gợi ý thông minh (AI)**: Gọi API `/api/suggestions?userId=xxx`
+- **Modal chi tiết**: Xem thông tin chi tiết khóa học
+- **Yêu thích**: Đánh dấu và quản lý khóa học yêu thích
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🌟 Điểm cộng
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Lịch sử xem**: Track và hiển thị khóa học đã xem
+- **Loading states**: Skeleton loading khi gọi API
+- **Error handling**: Xử lý lỗi khi API fail
+- **Responsive design**: Hoạt động tốt trên mọi thiết bị
 
-### `npm test`
+## 🛠️ Cài đặt và chạy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (>=14.0.0)
+- npm hoặc yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Cài đặt dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd ebook-marketplace
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Chạy project
 
-### `npm run eject`
+**Option 1: Chạy cùng lúc React + API Server**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Terminal 1: Start JSON Server
+npx json-server --watch db.json --port 3001
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Terminal 2: Start React App
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Option 2: Sử dụng script tự động (nếu concurrently hoạt động)**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run dev
+```
 
-## Learn More
+### URLs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React App**: http://localhost:3000
+- **API Server**: http://localhost:3001
+- **API Endpoints**:
+  - GET /courses - Lấy danh sách khóa học
+  - GET /suggestions?userId=xxx - Lấy gợi ý cho user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📊 Dữ liệu
 
-### Code Splitting
+Project sử dụng **JSON Server** làm fake API với file `db.json`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+{
+  "courses": [...],      // 10 khóa học mẫu
+  "suggestions": [...]   // Gợi ý cho từng user
+}
+```
 
-### Analyzing the Bundle Size
+## 🎯 Kiến trúc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Components chính
 
-### Making a Progressive Web App
+- **HomePage**: Trang chủ với danh sách khóa học
+- **FavoritesPage**: Trang quản lý yêu thích
+- **HistoryPage**: Lịch sử xem khóa học
+- **ProductModal**: Modal chi tiết sản phẩm
+- **SuggestionsModal**: Modal hiển thị gợi ý AI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Context Management
 
-### Advanced Configuration
+- **UserBehaviorContext**: Track hành vi xem khóa học
+- **FavoritesContext**: Quản lý danh sách yêu thích
+- **SuggestionsContext**: Xử lý gợi ý AI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Services
 
-### Deployment
+- **apiService.js**: API calls với Axios
+- **suggestionsService.js**: Logic gợi ý thông minh
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🤖 AI Suggestions
 
-### `npm run build` fails to minify
+Hệ thống gợi ý hoạt động theo 2 lớp:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **API-based**: Gọi `/api/suggestions?userId=xxx`
+2. **Algorithm-based**: Fallback algorithm dựa trên:
+   - Lịch sử xem
+   - Danh sách yêu thích
+   - Tương tự về giá cả, tác giả, level
+
+## 🎨 UI/UX Features
+
+- **Modern Design**: Giao diện hiện đại, thân thiện
+- **Responsive**: Mobile-first approach
+- **Smooth Animations**: Hover effects, transitions
+- **Loading States**: Skeleton loading cho better UX
+- **Error Handling**: User-friendly error messages
+
+## 🔧 Troubleshooting
+
+### JSON Server không khởi động
+
+```bash
+# Cài đặt global
+npm install -g json-server
+
+# Hoặc dùng npx
+npx json-server --watch db.json --port 3001
+```
+
+### Port 3001 bị chiếm
+
+```bash
+# Kiểm tra process đang dùng port
+lsof -i :3001
+
+# Kill process nếu cần
+kill -9 [PID]
+```
+
+### Images không hiển thị
+
+- Đảm bảo images trong folder `public/assets/course-images/`
+- Check đường dẫn trong db.json: `/assets/course-images/course-X.jpg`
+
+## 📝 Demo
+
+**Demo Link**: [Deployed on Vercel/Netlify]
+
+**Github Repo**: [Repository URL]
+
+## 🏗️ Technology Stack
+
+- **Frontend**: React 18, React Router DOM
+- **Styling**: CSS3, Responsive Design
+- **State Management**: Context API + useReducer
+- **HTTP Client**: Axios
+- **Mock API**: JSON Server
+- **Icons**: Lucide React
+
+---
+
+_Phát triển bởi [Tên của bạn] - Đáp ứng yêu cầu đề bài Front-end Intern Assignment_
